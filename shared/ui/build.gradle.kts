@@ -2,6 +2,9 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidKotlinMultiplatformLibrary)
     alias(libs.plugins.androidLint)
+    alias(libs.plugins.composeMultiplatform)
+    alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.jetbrains.kotlin.serialization)
 }
 
 kotlin {
@@ -61,6 +64,21 @@ kotlin {
             dependencies {
                 implementation(libs.kotlin.stdlib)
                 // Add KMP dependencies here
+                implementation(compose.runtime)
+                implementation(compose.components.resources)
+                implementation(compose.foundation)
+                implementation(compose.material3)
+                implementation(compose.ui)
+                implementation(compose.components.resources)
+                implementation(compose.components.uiToolingPreview)
+
+                //Nav3
+                implementation(libs.androidx.navigation3.runtime)
+                implementation(libs.androidx.navigation3.ui)
+                implementation(libs.kotlinx.serialization.core)
+
+                //Modules
+                implementation(project(":shared:core"))
             }
         }
 
