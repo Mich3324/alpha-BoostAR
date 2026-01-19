@@ -62,15 +62,20 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                implementation(libs.kotlin.stdlib)
-                // Add KMP dependencies here
+                resources.srcDirs("composeResources")
+
                 implementation(compose.runtime)
                 implementation(compose.components.resources)
                 implementation(compose.foundation)
                 implementation(compose.material3)
                 implementation(compose.ui)
-                implementation(compose.components.resources)
                 implementation(compose.components.uiToolingPreview)
+
+                implementation(libs.androidx.navigation3.runtime)
+                implementation(libs.androidx.navigation3.ui)
+                implementation(libs.kotlinx.serialization.core)
+
+                implementation(libs.kamel.image.default)
 
                 //Nav3
                 implementation(libs.androidx.navigation3.runtime)
