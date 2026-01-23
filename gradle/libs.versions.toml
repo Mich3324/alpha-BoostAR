@@ -13,18 +13,25 @@ composeMultiplatform = "1.9.3"
 junit = "4.13.2"
 kamelImage = "0.6.0"
 kamelImageDefault = "1.0.8"
+koinCore = "4.1.1"
 kotlin = "2.3.0"
 kotlinStdlib = "2.3.0"
+ktorClientCore = "2.3.7"
+ktorClientDarwin = "3.4.0"
+ktorClientDarwinVersion = "2.3.7"
 runner = "1.5.2"
 core = "1.5.0"
 nav3Core = "1.0.0"
 kotlinxSerializationCore = "1.8.1"
 kotlinSerialization = "2.2.21"
+supabaseKt = "3.3.0"
 
 [libraries]
+auth-kt = { module = "io.github.jan-tennert.supabase:auth-kt", version.ref = "supabaseKt" }
 kamel-image = { module = "com.icerockdev.kamel:kamel-image", version.ref = "kamelImage" }
 kamel-image-compose = { module = "com.icerockdev.kamel:kamel-image-compose", version.ref = "kamelImage" }
 kamel-image-default = { module = "media.kamel:kamel-image-default", version.ref = "kamelImageDefault" }
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koinCore" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-testJunit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 junit = { module = "junit:junit", version.ref = "junit" }
@@ -42,6 +49,18 @@ androidx-core = { group = "androidx.test", name = "core", version.ref = "core" }
 androidx-navigation3-runtime = { module = "androidx.navigation3:navigation3-runtime", version.ref = "nav3Core"}
 androidx-navigation3-ui = {module = "androidx.navigation3:navigation3-ui", version.ref = "nav3Core"}
 kotlinx-serialization-core = {module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "kotlinxSerializationCore"}
+ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktorClientDarwin" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktorClientCore" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktorClientDarwin" }
+ktor-client-core-v237 = { module = "io.ktor:ktor-client-core", version.ref = "ktorClientCore" }
+ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktorClientDarwin" }
+ktor-client-darwin-v237 = { module = "io.ktor:ktor-client-darwin", version.ref = "ktorClientDarwinVersion" }
+ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktorClientCore" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktorClientCore" }
+postgrest-kt = { module = "io.github.jan-tennert.supabase:postgrest-kt", version.ref = "supabaseKt" }
+realtime-kt = { module = "io.github.jan-tennert.supabase:realtime-kt", version.ref = "supabaseKt" }
+storage-kt = { module = "io.github.jan-tennert.supabase:storage-kt", version.ref = "supabaseKt" }
+supabase-kt = { module = "io.github.jan-tennert.supabase:supabase-kt", version.ref = "supabaseKt" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
