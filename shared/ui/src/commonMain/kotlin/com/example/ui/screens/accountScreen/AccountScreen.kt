@@ -28,6 +28,11 @@ fun AccountScreen(navigateTo: (Routes) -> Unit, back: () -> Unit, backTo: (Route
         Column {
             Text("")
             Card {
+                AuthButton(
+                    onClick = { navigateTo(Routes.LogInScreen) },
+                    text = "Log in",
+                    isFilled = true,
+                )
 
             }
         }
