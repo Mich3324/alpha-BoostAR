@@ -1,14 +1,14 @@
 package com.example.ui.navigation
 
-import androidx.navigation3.runtime.NavKey
+
 import kotlinx.serialization.Serializable
 
-sealed class Routes: NavKey {
+sealed class Routes {
     @Serializable
-    data object AcccountScreen: Routes()
+    data object AccountScreen: Routes()
 
     @Serializable
-    data object BasketScren: Routes()
+    data object BasketScreen: Routes()
 
     @Serializable
     data object FeedScreen: Routes()

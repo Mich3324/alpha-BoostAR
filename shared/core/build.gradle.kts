@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.androidLint)
+
 }
 
 kotlin {
@@ -24,6 +25,7 @@ kotlin {
         }.configure {
             instrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         }
+
     }
 
     // For iOS targets, this is also where you should
@@ -70,12 +72,10 @@ kotlin {
                 implementation(compose.material3)
                 implementation(compose.ui)
                 implementation(compose.components.uiToolingPreview)
-
-                implementation(libs.androidx.navigation3.runtime)
-                implementation(libs.androidx.navigation3.ui)
                 implementation(libs.kotlinx.serialization.core)
 
-                implementation(libs.kamel.image.default)
+                //Kamel
+                implementation(libs.kamel.image.default.v109)
             }
         }
 

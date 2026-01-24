@@ -42,6 +42,7 @@ kotlin {
 
             //Modules
             implementation(project(":shared:ui"))
+            implementation(project(":shared:di"))
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

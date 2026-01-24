@@ -5,7 +5,7 @@ import org.koin.core.context.startKoin
 
 fun initKoin(additionalConfiguration: KoinApplication.() -> Unit = {}) {
     startKoin {
-        modules(supabaseModule, repositoryModule, viewModelModule)
+        modules(supabaseModule, repositoryModule, useCaseModule, viewModelModule)
         additionalConfiguration()
     }
 }

@@ -1,7 +1,7 @@
 package com.example.data.implementation
 
 import com.example.core.entities.User
-import com.example.data.repository.AuthRepository
+import com.example.core.repository.AuthRepository
 import io.github.jan.supabase.SupabaseClient
 
 class AuthRepositoryImp(supabaseClient: SupabaseClient) : AuthRepository{

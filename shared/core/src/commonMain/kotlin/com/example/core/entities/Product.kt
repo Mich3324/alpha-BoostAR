@@ -10,5 +10,5 @@ data class Product(
     val modelURL: String,
     val multimedia: List<Multimedia>,
     val tallas: List<String>,
-    val colors: List<String>,
+    val colors: List<Color>,
 )

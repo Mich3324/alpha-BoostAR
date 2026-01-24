@@ -2,9 +2,6 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidKotlinMultiplatformLibrary)
     alias(libs.plugins.androidLint)
-    alias(libs.plugins.composeMultiplatform)
-    alias(libs.plugins.composeCompiler)
-    alias(libs.plugins.jetbrains.kotlin.serialization)
 }
 
 kotlin {
@@ -13,7 +10,7 @@ kotlin {
     // which platforms this KMP module supports.
     // See: https://kotlinlang.org/docs/multiplatform-discover-project.html#targets
     androidLibrary {
-        namespace = "com.example.ui"
+        namespace = "com.example.catalog"
         compileSdk = 36
         minSdk = 24
 
@@ -34,7 +31,7 @@ kotlin {
     // A step-by-step guide on how to include this library in an XCode
     // project can be found here:
     // https://developer.android.com/kotlin/multiplatform/migrate
-    val xcfName = "shared:uiKit"
+    val xcfName = "shared:features:catalogKit"
 
     iosX64 {
         binaries.framework {
@@ -62,26 +59,11 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                resources.srcDirs("composeResources")
+                implementation(libs.kotlin.stdlib)
+                // Add KMP dependencies here
 
-                implementation(compose.runtime)
-                implementation(compose.components.resources)
-                implementation(compose.foundation)
-                implementation(compose.material3)
-                implementation(compose.ui)
-                implementation(compose.components.uiToolingPreview)
-                
-                implementation(libs.kotlinx.serialization.core)
-
-                implementation(libs.kamel.image.default)
-
-                //Nav3
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.1")
-                implementation("org.jetbrains.androidx.navigation:navigation-compose:2.9.0-beta01")
-
-                //Modules
+                //Modulos
                 implementation(project(":shared:core"))
-                implementation(project(":shared:features:catalog"))
             }
         }
 

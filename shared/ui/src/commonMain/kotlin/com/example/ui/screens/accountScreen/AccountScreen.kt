@@ -13,6 +13,9 @@ import boostar.shared.ui.generated.resources.carrusel_auth_1
 import com.example.core.components.AuthButton
 import com.example.ui.navigation.Routes
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.ui.tooling.preview.Preview
+
+
 
 @Composable
 fun AccountScreen(navigateTo: (Routes) -> Unit, back: () -> Unit, backTo: (Routes) -> Unit){
@@ -32,6 +35,16 @@ fun AccountScreen(navigateTo: (Routes) -> Unit, back: () -> Unit, backTo: (Route
                     onClick = { navigateTo(Routes.LogInScreen) },
                     text = "Log in",
                     isFilled = true,
+                )
+                AuthButton(
+                    onClick = { navigateTo(Routes.SignInScreen) },
+                    text = "Sign in",
+                    isFilled = true,
+                )
+                AuthButton(
+                    onClick = { navigateTo(Routes.HomeScreen) },
+                    text = "Enter as guest",
+                    isFilled = false,
                 )
 
             }

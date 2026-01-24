@@ -1,8 +1,12 @@
 package com.example.di
 
-import com.example.data.datasource.SupabaseClientProvider
+import com.example.catalog.CatalogUseCaseManager
+import com.example.ui.screens.homeScreen.HomeScreenViewModel
+import org.koin.core.module.dsl.viewModel
+
+
 import org.koin.dsl.module
 
-val viewModeleModule = module {
-
+val viewModelModule = module {
+    viewModel { HomeScreenViewModel(get()) }
 }

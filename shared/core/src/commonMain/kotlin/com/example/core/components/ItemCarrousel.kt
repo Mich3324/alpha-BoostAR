@@ -14,13 +14,14 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.core.entities.Product
 
 @Composable
 
-fun ItemCarrousel(nombre: String, fotos: List<String>, navigateTo: () -> Unit){
+fun ItemCarrousel(name: String, products: List<Product>, navigateTo: () -> Unit){
     HorizontalDivider(thickness = 2.dp)
     Text(
-        text = nombre,
+        text = name,
         modifier = Modifier.clickable(
             onClick = navigateTo
         ).fillMaxWidth(),
@@ -30,9 +31,9 @@ fun ItemCarrousel(nombre: String, fotos: List<String>, navigateTo: () -> Unit){
         )
     )
     LazyRow() {
-        items(fotos){
+        items(products){
             Card(modifier = Modifier.padding(6.dp)) {
-                ItemProducto(it)
+                ItemProduct(it)
             }
         }
     }

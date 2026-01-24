@@ -1,4 +1,4 @@
-package com.example.data.repository
+package com.example.core.repository
 
 import com.example.core.entities.User
 

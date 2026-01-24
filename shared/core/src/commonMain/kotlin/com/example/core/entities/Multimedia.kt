@@ -2,8 +2,9 @@ package com.example.core.entities
 
 data class Multimedia(
     val id: Int,
-    val multimedia_url: String,
-    val tipoMultimedia: TypeMultimedia
+    val multimediaURL: String,
+    val isPrincipal: Boolean,
+    val type: TypeMultimedia
 )
 
 enum class TypeMultimedia{
