@@ -8,7 +8,7 @@ import com.example.core.entities.Product
 import com.example.data.model.ProductDTO
 import io.github.jan.supabase.SupabaseClient
 
-class ProductRepositoryImp(supabaseClient: SupabaseClient): ProductRepository {
+class MockProductRepositoryImp(supabaseClient: SupabaseClient): ProductRepository {
     override fun getProducts(): List<Product> {
 
         val products = listOf(ProductDTO(

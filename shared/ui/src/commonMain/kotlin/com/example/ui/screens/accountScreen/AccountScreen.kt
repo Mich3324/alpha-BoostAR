@@ -8,14 +8,11 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import boostar.shared.ui.generated.resources.Res
-import boostar.shared.ui.generated.resources.carrusel_auth_1
 import com.example.core.components.AuthButton
 import com.example.ui.navigation.Routes
 import org.jetbrains.compose.resources.painterResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
-
-
+import boostar.shared.ui.generated.resources.Res
+import boostar.shared.ui.generated.resources.carrusel_auth_1
 
 @Composable
 fun AccountScreen(navigateTo: (Routes) -> Unit, back: () -> Unit, backTo: (Routes) -> Unit){

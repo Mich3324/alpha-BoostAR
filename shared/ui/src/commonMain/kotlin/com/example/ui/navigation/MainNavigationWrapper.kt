@@ -15,7 +15,6 @@ import com.example.ui.screens.onboardingChooseScreen.OnboardingChooseScreen
 @Composable
 fun MainNavigationWrapper() {
     val navController = rememberNavController()
-    //rememberNavBackStack(configuration = SavedStateConfiguration.DEFAULT)
 
     NavHost(navController, Routes.AccountScreen)  {
             composable<Routes.AccountScreen> {

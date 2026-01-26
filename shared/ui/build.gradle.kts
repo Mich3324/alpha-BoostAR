@@ -61,19 +61,18 @@ kotlin {
     // See: https://kotlinlang.org/docs/multiplatform-hierarchy.html
     sourceSets {
         commonMain {
-            dependencies {
-                resources.srcDirs("composeResources")
 
-                implementation(compose.runtime)
-                implementation(compose.components.resources)
-                implementation(compose.foundation)
-                implementation(compose.material3)
-                implementation(compose.ui)
-                implementation(compose.components.uiToolingPreview)
+            dependencies {
+
+                implementation(libs.runtime)
+                implementation(libs.components.resources)
+                implementation(libs.foundation)
+                implementation(libs.material3)
+                implementation(libs.ui)
+                implementation(libs.ui.tooling.preview)
                 
                 implementation(libs.kotlinx.serialization.core)
-
-                implementation(libs.kamel.image.default)
+                implementation(libs.kamel.image)
 
                 //Nav3
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.1")
@@ -84,6 +83,7 @@ kotlin {
                 implementation(project(":shared:features:catalog"))
             }
         }
+
 
         commonTest {
             dependencies {

@@ -75,7 +75,8 @@ kotlin {
                 implementation(libs.kotlinx.serialization.core)
 
                 //Kamel
-                implementation(libs.kamel.image.default.v109)
+                implementation(libs.kamel.image)
+                implementation(libs.kamel.image.default)
             }
         }
 

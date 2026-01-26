@@ -1,6 +1,6 @@
 package com.example.di
 
-import com.example.catalog.CatalogUseCaseManager
+
 import com.example.ui.screens.homeScreen.HomeScreenViewModel
 import org.koin.core.module.dsl.viewModel
 

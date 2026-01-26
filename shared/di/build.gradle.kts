@@ -65,7 +65,12 @@ kotlin {
                 // Koin para inyección de dependencias
                 implementation(libs.koin.core)
 
+                //Supabase
+                // Supabase
+                implementation(libs.supabase.kt)
+
                 //Modules
+                implementation(project(":shared:core"))
                 implementation(project(":shared:ui"))
                 implementation(project(":shared:data"))
                 implementation(project(":shared:features:catalog"))
