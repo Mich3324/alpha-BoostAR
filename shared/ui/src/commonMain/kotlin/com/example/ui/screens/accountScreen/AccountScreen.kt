@@ -21,10 +21,6 @@ fun AccountScreen(navigateTo: (Routes) -> Unit, back: () -> Unit, backTo: (Route
         Modifier.fillMaxSize()
 
     ){
-        Image(
-            painter = painterResource(resource = Res.drawable.carrusel_auth_1),
-            contentDescription = "Carrusel imagenes"
-            )
         Column {
             Text("")
             Card {

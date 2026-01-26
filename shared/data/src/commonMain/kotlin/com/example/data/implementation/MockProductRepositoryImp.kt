@@ -5,12 +5,12 @@ import com.example.core.entities.TypeMultimedia
 import com.example.data.datasource.SupabaseClientProvider
 import com.example.core.repository.ProductRepository
 import com.example.core.entities.Product
+import com.example.core.utils.logDebug
 import com.example.data.model.ProductDTO
 import io.github.jan.supabase.SupabaseClient
 
 class MockProductRepositoryImp(supabaseClient: SupabaseClient): ProductRepository {
     override fun getProducts(): List<Product> {
-
         val products = listOf(ProductDTO(
             id = 0,
             name = "Camiseta",

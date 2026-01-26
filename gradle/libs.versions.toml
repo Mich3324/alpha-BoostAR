@@ -17,9 +17,7 @@ kamelImage = "1.0.9"
 koin = "4.1.1"
 kotlin = "2.3.0"
 kotlinStdlib = "2.3.0"
-ktorClientCore = "2.3.7"
-ktorClientDarwin = "3.4.0"
-ktorClientDarwinVersion = "2.3.7"
+ktor = "3.0.0"
 material3 = "1.9.0"
 precompose = "1.6.2"
 runner = "1.5.2"
@@ -35,7 +33,6 @@ ui = "1.10.0"
 auth-kt = { module = "io.github.jan-tennert.supabase:auth-kt", version.ref = "supabaseKt" }
 
 
-components-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "componentsResources" }
 foundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "foundation" }
 kamel-image = { module = "media.kamel:kamel-image", version.ref = "kamelImage" }
 kamel-image-default = { module = "media.kamel:kamel-image-default", version.ref = "kamelImage" }
@@ -59,12 +56,14 @@ androidx-core = { group = "androidx.test", name = "core", version.ref = "core" }
 androidx-navigation3-runtime = { module = "androidx.navigation3:navigation3-runtime", version.ref = "nav3Core"}
 androidx-navigation3-ui = {module = "androidx.navigation3:navigation3-ui", version.ref = "nav3Core"}
 kotlinx-serialization-core = {module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "kotlinxSerializationCore"}
-ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktorClientDarwin" }
-ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktorClientCore" }
-ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktorClientDarwin" }
-ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktorClientDarwin" }
-ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktorClientCore" }
-ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktorClientCore" }
+ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
+ktor-client-ios = { module = "io.ktor:ktor-client-ios", version.ref = "ktor" }
+ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
+ktor-client-timeout = { module = "io.ktor:ktor-client-timeout", version.ref = "ktor" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 
 material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "material3" }
 realtime-kt = { module = "io.github.jan-tennert.supabase:realtime-kt", version.ref = "supabaseKt" }

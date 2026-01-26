@@ -18,7 +18,7 @@ import com.example.core.entities.Product
 
 @Composable
 
-fun ItemCarrousel(name: String, products: List<Product>, navigateTo: () -> Unit){
+fun ItemCarrousel(name: String, products: List<Product>, navigateTo: () -> Unit, itemClickable: (Int) -> Unit){
     HorizontalDivider(thickness = 2.dp)
     Text(
         text = name,
@@ -31,10 +31,8 @@ fun ItemCarrousel(name: String, products: List<Product>, navigateTo: () -> Unit)
         )
     )
     LazyRow() {
-        items(products){
-            Card(modifier = Modifier.padding(6.dp)) {
-                ItemProduct(it)
-            }
+        items(products){ product ->
+                ItemCard(product, {itemClickable(product.id)})
         }
     }
 }

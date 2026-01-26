@@ -1,6 +1,7 @@
 package com.example.core.components
 
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Card
 import androidx.compose.runtime.Composable
@@ -12,12 +13,12 @@ import io.kamel.image.asyncPainterResource
 
 
 @Composable
-fun ItemProduct(product: Product) {
-    Card(modifier = Modifier.size(150.dp)) {
+fun ItemCard(product: Product, clickable: () -> Unit) {
+    val imagen = product.multimedia.first { m -> m.isPrincipal }.multimediaURL
+    Card(modifier = Modifier.size(150.dp).clickable{ clickable() }) {
 
-        //Image
         KamelImage(
-            resource = { asyncPainterResource(product.multimedia.filter { m -> m.isPrincipal }) },
+            resource = { asyncPainterResource(imagen) },
             contentDescription = product.name,
 
         )
