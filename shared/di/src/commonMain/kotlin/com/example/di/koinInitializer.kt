@@ -1,11 +1,13 @@
 package com.example.di
 
+import com.example.core.utils.logDebug
 import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin
 
 fun initKoin(additionalConfiguration: KoinApplication.() -> Unit = {}) {
     startKoin {
-        modules(supabaseModule, repositoryModule, useCaseModule, viewModelModule, navigationModule)
+        modules(supabaseModule, repositoryModule, useCaseModule, viewModelModule)
         additionalConfiguration()
+        logDebug("INICIAMOS KOIN", "KOIN INICIADO")
     }
 }

@@ -60,16 +60,17 @@ kotlin {
     // common to share sources between related targets.
     // See: https://kotlinlang.org/docs/multiplatform-hierarchy.html
     sourceSets {
-        commonMain {
 
+        commonMain {
+            resources.srcDir("src/commonMain/composeResources")
             dependencies {
 
-                implementation(libs.runtime)
-                implementation(libs.components.resources)
-                implementation(libs.foundation)
-                implementation(libs.material3)
-                implementation(libs.ui)
-                implementation(libs.ui.tooling.preview)
+                implementation(compose.runtime)
+                implementation(compose.foundation)
+                implementation(compose.material3)
+                implementation(compose.ui)
+                implementation(compose.components.resources)
+                implementation(compose.components.uiToolingPreview)
                 
                 implementation(libs.kotlinx.serialization.core)
                 implementation(libs.kamel.image)
@@ -77,6 +78,10 @@ kotlin {
                 //Nav3
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.1")
                 implementation("org.jetbrains.androidx.navigation:navigation-compose:2.9.0-beta01")
+
+                //Koin
+                implementation(libs.koin.compose)
+                implementation(libs.koin.compose.viewmodel)
 
                 //Modules
                 implementation(project(":shared:core"))

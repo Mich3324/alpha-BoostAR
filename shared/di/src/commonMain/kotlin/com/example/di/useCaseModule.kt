@@ -2,6 +2,7 @@ package com.example.di
 
 import com.example.catalog.CatalogUseCaseManager
 import com.example.catalog.useCase.GetProductsUseCase
+import com.example.core.utils.logDebug
 import org.koin.dsl.module
 
 val useCaseModule = module {
@@ -10,4 +11,5 @@ val useCaseModule = module {
 
     //Managers
     factory { CatalogUseCaseManager(get()) }
+    logDebug("INICIAMOS KOIN", "CASOS")
 }

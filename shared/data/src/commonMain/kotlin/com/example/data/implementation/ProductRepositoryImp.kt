@@ -2,16 +2,15 @@ package com.example.data.implementation
 
 import com.example.core.entities.Multimedia
 import com.example.core.entities.TypeMultimedia
-import com.example.data.datasource.SupabaseClientProvider
 import com.example.core.repository.ProductRepository
 import com.example.core.entities.Product
-import com.example.data.model.ProductDTO
+import com.example.data.model.ProductDAO
 import io.github.jan.supabase.SupabaseClient
 
 class ProductRepositoryImp(supabaseClient: SupabaseClient): ProductRepository {
     override fun getProducts(): List<Product> {
 
-        val products = listOf(ProductDTO(
+        val products = listOf(ProductDAO(
             id = 0,
             name = "Camiseta",
             price = 10.25,

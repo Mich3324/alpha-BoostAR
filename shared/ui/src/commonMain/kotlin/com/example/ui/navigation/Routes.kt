@@ -11,7 +11,7 @@ sealed class Routes {
     data object BasketScreen: Routes()
 
     @Serializable
-    data object FeedScreen: Routes()
+    data class FeedScreen(val productId: Int): Routes()
 
     @Serializable
     data object HomeScreen: Routes()
