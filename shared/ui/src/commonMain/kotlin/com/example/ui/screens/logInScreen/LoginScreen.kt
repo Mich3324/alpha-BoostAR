@@ -49,43 +49,37 @@ fun LogInScreen(navigateTo: (Routes) -> Unit, back: () -> Unit, backTo: (Routes)
                 style = MaterialTheme.typography.displayMedium,
                 color = authSecondaryButtonColor
             )
+        }
 
-            Surface(
-                modifier = Modifier.fillMaxWidth(),
-                color = authSecondaryButtonColor,
-                shape = RoundedCornerShape(topStart = 32.dp)
-            )
-            {
-                Column(modifier = Modifier.padding(start = 32.dp,end=32.dp, top = 40.dp, bottom = 50.dp),
-                    verticalArrangement = Arrangement.spacedBy(16.dp))
-                {
+        Surface(
+            modifier = Modifier.fillMaxWidth(),
+            color = authSecondaryButtonColor,
+            shape = RoundedCornerShape(topStart = 32.dp, topEnd = 32.dp)
+        )
+        {
+            Column {
 
-                    Card {
-                        AuthButton(
-                            onClick = { navigateTo(Routes.LogInScreen) },
-                            text = "Log in",
-                            isFilled = true,
-                        )
-                        AuthButton(
-                            onClick = { navigateTo(Routes.SignInScreen) },
-                            text = "Sign in",
-                            isFilled = true,
-                        )
-                        AuthButton(
-                            onClick = { navigateTo(Routes.HomeScreen) },
-                            text = "Enter as guest",
-                            isFilled = false,
-                        )
-
-                    }
-
-                }
+                AuthButton(
+                    onClick = { navigateTo(Routes.LogInScreen) },
+                    text = "continue with Google",
+                    isFilled = true,
+                )
+                AuthButton(
+                    onClick = { navigateTo(Routes.SignInScreen) },
+                    text = "continue with Phone",
+                    isFilled = true,
+                )
+                AuthButton(
+                    onClick = { navigateTo(Routes.HomeScreen) },
+                    text = "continue with",
+                    isFilled = true,
+                )
 
             }
-
 
         }
 
     }
+
 
 }
