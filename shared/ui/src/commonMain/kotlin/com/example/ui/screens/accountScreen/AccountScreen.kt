@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -25,8 +26,11 @@ fun AccountScreen(navigateTo: (Routes) -> Unit, back: () -> Unit, backTo: (Route
             painter = painterResource(resource = Res.drawable.carrusel_auth_1),
             contentDescription = "Carrusel imagenes"
             )
-        Column {
-            Text("")
+        Column (modifier=Modifier.fillMaxSize()){
+            Text("BoostAR")
+        }
+
+
             Card {
                 AuthButton(
                     onClick = { navigateTo(Routes.LogInScreen) },
@@ -45,7 +49,7 @@ fun AccountScreen(navigateTo: (Routes) -> Unit, back: () -> Unit, backTo: (Route
                 )
 
             }
-        }
+
     }
 
 }
