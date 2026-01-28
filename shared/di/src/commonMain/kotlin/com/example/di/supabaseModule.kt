@@ -9,5 +9,5 @@ val supabaseModule = module {
         supabaseUrl = "https://moygfqmmtuwvpeatrvhw.supabase.co",
         supabaseKey = "sb_publishable_hfxhVvbzz9SQ9gQovMtFhA_Gte1KvBG"
     ).client }
-    logDebug("INICIAMOS KOIN", "SUPABASE")
+
 }

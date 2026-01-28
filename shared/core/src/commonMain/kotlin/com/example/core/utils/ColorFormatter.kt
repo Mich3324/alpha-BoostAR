@@ -1,8 +1,19 @@
 package com.example.core.utils
 
+import androidx.compose.ui.graphics.Color
+
 data class RGBA(val r: Int, val g: Int, val b: Int, val a: Int = 255)
 
 class ColorFormatter(){
+
+
+    fun getColor(hex: String): Color {
+        val rgba = parseHexColor(hex)
+        return getColor(rgba)
+    }
+    fun getColor(rgba: RGBA): Color {
+        return Color(red = rgba.r, green = rgba.g, blue = rgba.b, alpha = rgba.a)
+    }
 
     fun parseHexColor(hex: String): RGBA {
         val cleanHex = hex.removePrefix("#")

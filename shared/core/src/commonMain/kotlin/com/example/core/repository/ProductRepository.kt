@@ -4,14 +4,18 @@ import com.example.core.entities.Product
 
 
 interface ProductRepository {
-    fun getProducts(): List<Product>
-    fun getTrendingProducts(): List<Product>
-    fun getNewProducts(): List<Product>
-    fun getProductByBrannd(): List<Product>
+    suspend fun getProducts(): List<Product>
+    /*
+    suspend fun getTrendingProducts(): List<Product>
+    suspend fun getNewProducts(): List<Product>
+    suspend fun getProductByBrannd(): List<Product>
 
-    fun getProductsByDiscount(): List<Product>
+    suspend fun getProductsByDiscount(): List<Product>
 
-    fun getProductById(productId: Int): Product
+    suspend fun getProductById(productId: Int): Product
 
-    fun getProductByStyle(styleId: Int): Product
+    suspend fun getProductByStyle(styleId: Int): Product
+
+     */
+
 }

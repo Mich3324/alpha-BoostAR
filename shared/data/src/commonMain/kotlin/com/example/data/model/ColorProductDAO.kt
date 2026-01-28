@@ -5,7 +5,9 @@ class ColorProductDAO(
     val idProduct: Int,
 ){
     // Obtener lista de colores
-
+    fun getColorListByProduct(idProduct: Int){
+        return
+    }
     //Obtener lista de productos
 
 }

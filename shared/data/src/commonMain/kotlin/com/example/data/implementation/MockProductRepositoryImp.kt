@@ -1,22 +1,95 @@
 package com.example.data.implementation
 
+
 import com.example.core.entities.Brand
+import com.example.core.entities.ClothingSize
+import com.example.core.entities.Multimedia
 import com.example.core.repository.ProductRepository
 import com.example.core.entities.Product
+import com.example.core.entities.ProductColor
+import com.example.core.entities.Standard
 import com.example.core.entities.Style
-import com.example.data.model.ColorDAO
-import com.example.data.model.MultimediaDAO
-import com.example.data.model.ProductDAO
-import com.example.data.model.TypeMultimediaDAO
+import com.example.core.entities.TypeMultimedia
+import com.example.core.utils.ColorFormatter
 import io.github.jan.supabase.SupabaseClient
 
 class MockProductRepositoryImp(supabaseClient: SupabaseClient): ProductRepository {
-    /*
-    val products = listOf(ProductDAO(
+    val brands = listOf(
+        Brand(
+            id = 0,
+            name = "Marca 1",
+            logoImage = ""
+        ),
+        Brand(
+            id = 1,
+            name = "Marca 2",
+            logoImage = ""
+        )
+    )
+
+    val colors = listOf(
+        ProductColor(
+        id = 0,
+        name = "Red",
+        color = ColorFormatter().getColor("#FF0000")
+    ),
+        ProductColor(
+            id = 1,
+            name = "Green",
+            color = ColorFormatter().getColor("#00FF00")
+        )
+    )
+    val styles = listOf(
+        Style(
+            id = 0,
+            name = "Formal",
+        ),
+        Style(
+            id = 1,
+            name = "Informal"
+        )
+    )
+    val standard = listOf(
+        Standard(
+            id = 0,
+            name = "Alfabetico"
+        ),
+        Standard(
+            id = 1,
+            name = "Numerico"
+        )
+    )
+    val tallas = listOf(
+        ClothingSize(
+            id = 0,
+            name = "S",
+            standard = standard[0],
+        ),
+        ClothingSize(
+            id = 1,
+            name = "M",
+            standard = standard[0],
+        ),
+        ClothingSize(
+            id = 2,
+            name = "L",
+            standard = standard[0],
+        ),
+        ClothingSize(
+            id = 3,
+            name = "XL",
+            standard = standard[0],
+        ),
+    )
+    val products = listOf(Product(
         id = 0,
         name = "Camiseta 1",
         price = 10.25,
-        brand = "Marca 1",
+        discountPrice = 10.00,
+        style = styles[0],
+        tallas = tallas.filter { it.standard.id == 0 },
+        colors = colors,
+        brand = brands[0],
         numLikes = 4309,
         modelURL = "",
         multimedia = listOf(
@@ -27,183 +100,65 @@ class MockProductRepositoryImp(supabaseClient: SupabaseClient): ProductRepositor
                 type = TypeMultimedia.IMAGE
             ),
             Multimedia(
-                id = 0,
+                id = 1,
                 multimediaURL = "https://mundotextil.com/tienda/454-large_default/camiseta-fruit-of-the-loom-610360.jpg",
                 isPrincipal = true,
                 type = TypeMultimedia.IMAGE
             )
         )
     ),
-        ProductDAO(
-            id = 0,
-            name = "Camiseta 2",
-            price = 10.25,
-            brand = "Marca 1",
-            numLikes = 4309,
-            modelURL = "",
-            multimedia = listOf(
-                Multimedia(
-                    id = 0,
-                    multimediaURL = "https://www.joma-sport.com/dw/image/v2/BFRV_PRD/on/demandware.static/-/Sites-joma-masterCatalog/default/dw0e82cc45/images/medium/101739.100_1.jpg?sw=900&sh=900&sm=fit",
-                    isPrincipal = true,
-                    type = TypeMultimedia.IMAGE
-                ),
-                Multimedia(
-                    id = 1,
-                    multimediaURL = "https://mundotextil.com/tienda/454-large_default/camiseta-fruit-of-the-loom-610360.jpg",
-                    isPrincipal = true,
-                    type = TypeMultimedia.IMAGE
-                )
-            )
-        ),
-        ProductDAO(
-            id = 1,
-            name = "Camiseta 3",
-            price = 10.25,
-            brand = "Marca 1",
-            numLikes = 4309,
-            modelURL = "",
-            multimedia = listOf(
-                Multimedia(
-                    id = 0,
-                    multimediaURL = "https://www.joma-sport.com/dw/image/v2/BFRV_PRD/on/demandware.static/-/Sites-joma-masterCatalog/default/dw0e82cc45/images/medium/101739.100_1.jpg?sw=900&sh=900&sm=fit",
-                    isPrincipal = true,
-                    type = TypeMultimedia.IMAGE
-                ),
-                Multimedia(
-                    id = 1,
-                    multimediaURL = "https://mundotextil.com/tienda/454-large_default/camiseta-fruit-of-the-loom-610360.jpg",
-                    isPrincipal = true,
-                    type = TypeMultimedia.IMAGE
-                )
-            )
-        ))*/
-    val products = listOf(
-        ProductDAO(
+        Product(
             id = 0,
             name = "Camiseta 1",
-            price = 10.4,
-            discountPrice = 9.00,
-            brandId = 0,
-            styleId = 0,
-            timesBougth = 5,
-            numLikes = 42
+            price = 10.25,
+            discountPrice = 5.4,
+            brand = brands[1],
+            style = styles[1],
+            tallas = tallas.filter { it.standard.id == 1 },
+            colors = colors,
+            numLikes = 4309,
+            modelURL = "",
+            multimedia = listOf(
+                Multimedia(
+                    id = 0,
+                    multimediaURL = "https://www.joma-sport.com/dw/image/v2/BFRV_PRD/on/demandware.static/-/Sites-joma-masterCatalog/default/dw0e82cc45/images/medium/101739.100_1.jpg?sw=900&sh=900&sm=fit",
+                    isPrincipal = true,
+                    type = TypeMultimedia.IMAGE
+                ),
+                Multimedia(
+                    id = 1,
+                    multimediaURL = "https://mundotextil.com/tienda/454-large_default/camiseta-fruit-of-the-loom-610360.jpg",
+                    isPrincipal = true,
+                    type = TypeMultimedia.IMAGE
+                )
+            )
         ),
-        ProductDAO(
+        Product(
             id = 1,
             name = "Camiseta 2",
-            price = 13.4,
-            brandId = 1,
-            styleId = 1,
-            timesBougth = 5,
-            numLikes = 42
-        )
-    )
-    val brands = listOf(
-        Brand(
-            id = 0,
-            name = "Adidas",
-            logoImage = ""
-        ),
-        Brand(
-            id = 1,
-            name = "Nike",
-            logoImage = ""
-        )
-    )
-
-    val styles = listOf(
-        Style(
-            id = 0,
-            name = "Casual"
-        ),
-        Style(
-            id = 1,
-            name = "MichelleIano"
-        )
-    )
-
-    val colors = listOf(
-        ColorDAO(
-            id = 0,
-            name = "Rojo",
-            hexCode = "#FF0000"
-        ),
-        ColorDAO(
-            id = 1,
-            name = "Verde",
-            hexCode = "#00FF00"
-        ),
-        ColorDAO(
-            id = 2,
-            name = "Azul",
-            hexCode = "#0000FF"
-        )
-    )
-    val multimedia = listOf(
-        MultimediaDAO(
-            idMultimedia = 0,
-            multimediaURL = "https://www.joma-sport.com/dw/image/v2/BFRV_PRD/on/demandware.static/-/Sites-joma-masterCatalog/default/dw0e82cc45/images/medium/101739.100_1.jpg?sw=900&sh=900&sm=fit",
-            isPrincipal = true,
-            idType = 0,
-        ),
-        MultimediaDAO(
-            idMultimedia = 1,
-            multimediaURL = "https://www.joma-sport.com/dw/image/v2/BFRV_PRD/on/demandware.static/-/Sites-joma-masterCatalog/default/dw0e82cc45/images/medium/101739.100_1.jpg?sw=900&sh=900&sm=fit",
-            isPrincipal = false,
-            idType = 0,
-        ),
-        MultimediaDAO(
-            idMultimedia = 0,
-            multimediaURL = "https://mundotextil.com/tienda/454-large_default/camiseta-fruit-of-the-loom-610360.jpg",
-            isPrincipal = true,
-            idType = 0,
-        ),
-        MultimediaDAO(
-            idMultimedia = 1,
-            multimediaURL = "https://mundotextil.com/tienda/454-large_default/camiseta-fruit-of-the-loom-610360.jpg",
-            isPrincipal = false,
-            idType = 0,
-        ),
-    )
-
-    val multimediaTypes = listOf(
-        TypeMultimediaDAO(
-            id = 0,
-            name = "IMAGEN"
-        )
-    )
-
-    override fun getProducts(): List<Product> {
-        return products.map { productDTO -> productDTO.toEntity(
-            brand = brands[productDTO.brandId],
-            style = styles[productDTO.styleId],
-            multimediaList = TODO(),
-            clothingSizeList = TODO(),
-            productColorList = TODO()
-        ) }
-    }
-
-    override fun getTrendingProducts(): List<Product> {
-        return products.sortedByDescending { productDTO -> productDTO.numLikes }.map { productDTO -> productDTO.toEntity() }
-    }
-
-    override fun getNewProducts(): List<Product> {
-        return products.sortedByDescending { productDTO -> productDTO.id }.map { productDTO -> productDTO.toEntity() }
-    }
-
-    override fun getProductByBrannd(): List<Product> {
-    }
-
-    override fun getProductsByDiscount(): List<Product> {
-        TODO("Not yet implemented")
-    }
-
-    override fun getProductById(productId: Int): Product {
-        TODO("Not yet implemented")
-    }
-
-    override fun getProductByStyle(styleId: Int): Product {
-        TODO("Not yet implemented")
+            price = 10.25,
+            brand = brands[1],
+            style = styles[1],
+            tallas = tallas.filter { it.standard.id == 1 },
+            colors = colors,
+            numLikes = 4309,
+            modelURL = "",
+            multimedia = listOf(
+                Multimedia(
+                    id = 0,
+                    multimediaURL = "https://www.joma-sport.com/dw/image/v2/BFRV_PRD/on/demandware.static/-/Sites-joma-masterCatalog/default/dw0e82cc45/images/medium/101739.100_1.jpg?sw=900&sh=900&sm=fit",
+                    isPrincipal = true,
+                    type = TypeMultimedia.IMAGE
+                ),
+                Multimedia(
+                    id = 1,
+                    multimediaURL = "https://mundotextil.com/tienda/454-large_default/camiseta-fruit-of-the-loom-610360.jpg",
+                    isPrincipal = true,
+                    type = TypeMultimedia.IMAGE
+                )
+            )
+        ))
+    override suspend fun getProducts(): List<Product> {
+        return products
     }
 }

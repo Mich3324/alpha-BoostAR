@@ -29,7 +29,8 @@ class ProductDAO(
             numLikes = numLikes,
             multimedia = multimediaList,
             tallas = clothingSizeList,
-            colors = productColorList
+            colors = productColorList,
+            modelURL = ""
         )
     }
 }

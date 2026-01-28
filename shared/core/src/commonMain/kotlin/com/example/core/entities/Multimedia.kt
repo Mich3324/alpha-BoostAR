@@ -3,7 +3,7 @@ package com.example.core.entities
 data class Multimedia(
     val id: Int,
     val multimediaURL: String,
-    val isPrincipal: Boolean,
+    val isPrincipal: Boolean = false,
     val type: TypeMultimedia
 )
 

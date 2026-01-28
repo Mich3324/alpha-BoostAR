@@ -1,7 +1,11 @@
 package com.example.data.datasource
 
 import io.github.jan.supabase.SupabaseClient
+import io.github.jan.supabase.auth.Auth
 import io.github.jan.supabase.createSupabaseClient
+import io.github.jan.supabase.postgrest.Postgrest
+import io.github.jan.supabase.postgrest.postgrest
+import io.github.jan.supabase.storage.Storage
 
 
 class SupabaseClientProvider {
@@ -13,8 +17,12 @@ class SupabaseClientProvider {
         client = createSupabaseClient(
             supabaseUrl = supabaseUrl,
             supabaseKey = supabaseKey,
-            builder = {}
+            builder = {
+                install(Auth)
+                install(Postgrest)
+                install(Storage)
+
+            }
         )
     }
-
 }
