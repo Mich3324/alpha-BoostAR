@@ -29,14 +29,14 @@ import org.jetbrains.compose.resources.painterResource
 fun LogInScreen(navigateTo: (Routes) -> Unit, back: () -> Unit, backTo: (Routes) -> Unit) {
 
     Box(modifier = Modifier.fillMaxSize()) {
-
+/*
         Image(
             painterResource(Res.drawable.carrusel_auth_2),
             contentScale = ContentScale.Crop,
             contentDescription = "image",
             modifier = Modifier.fillMaxSize()
         )
-
+*/
         Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.Bottom) {
             Text(
                 text = "Boost",
@@ -57,7 +57,7 @@ fun LogInScreen(navigateTo: (Routes) -> Unit, back: () -> Unit, backTo: (Routes)
             shape = RoundedCornerShape(topStart = 32.dp, topEnd = 32.dp)
         )
         {
-            Column {
+            Column(modifier = Modifier.padding(top = 40.dp)) {
 
                 AuthButton(
                     onClick = { navigateTo(Routes.LogInScreen) },

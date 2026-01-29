@@ -74,6 +74,8 @@ kotlin {
                 implementation(compose.components.uiToolingPreview)
                 implementation(libs.kotlinx.serialization.core)
 
+                implementation(libs.material.icons.extended)
+
                 //Kamel
                 implementation(libs.kamel.image)
                 implementation(libs.kamel.image.default)
